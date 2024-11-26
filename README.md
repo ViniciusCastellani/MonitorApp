@@ -6,6 +6,9 @@
 
 This project is an Android application that performs CRUD operations for managing monitors. It communicates with a Spring Boot backend via HTTP using Volley, with the backend storing data in an **H2 file-based database** accessed through JDBC.
 
+The backend for this project is hosted in a separate repository. You can find it here:  
+**[Monitor Server Repository](https://github.com/ViniciusCastellani/Monitor-Server)**
+
 ### Features
 
 - **Create**: Add new monitors with attributes like name, type, size, and price.
@@ -60,6 +63,8 @@ The backend's REST controller handles CRUD operations under `/api/monitor`:
 | `PUT`    | `/api/monitor`    | Update an existing monitor    |
 | `DELETE` | `/api/monitor/{id}`| Delete a monitor by ID        |
 
+For more details, visit the [Monitor Server Repository](https://github.com/ViniciusCastellani/Monitor-Server).
+
 ---
 
 ### Android App Configuration
@@ -96,7 +101,7 @@ public class Monitor {
 ### Setup Instructions
 
 #### Backend Setup
-1. Clone or download the Spring Boot backend project.
+1. Clone or download the backend project from [Monitor Server Repository](https://github.com/ViniciusCastellani/Monitor-Server).
 2. Build the project:
    ```bash
    mvn clean install
@@ -111,9 +116,12 @@ public class Monitor {
    - **Password**: `password`
 
 #### Android App Setup
-1. Clone or download the Android project.
+1. Clone or download this repository.
 2. Open the project in Android Studio.
-3. Update the `ipServer` variable in the `ComunicacaoServer` class with your server's IP address.
+3. Set the backend IP address in the `ComunicacaoServer` class:
+   ```java
+   private String ipServer = "<SERVER_IP_ADDRESS>";
+   ```
 4. Build and run the app on an emulator or physical device.
 
 ---
